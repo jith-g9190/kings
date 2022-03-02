@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="main row">
+       <div class="col-md-6 col-lg-6 col-12 col-xl-6">
+        <img class="img-fluid" src="/assets/log.gif" alt="couldn't load image">
+       </div>
+       <div class="col-md-6 col-12 col-lg-6 col-xl-6 mt-5">
+        <form [formGroup]="loginForm" (ngSubmit)="login()"  >
+            <h3 class="mb-4 text-center">Login Here</h3>
+        <div class="col-md-8 mb-3">
+            <input  class="col-md-8 col-12 col-lg-6 col-xl-6 form-control mt-2 mb-2 " type="text" formControlName="uname" name="uname" id="" placeholder="enter username">
+            <p *ngIf="(this.loginForm.get('uname')?.touched || this.loginForm.get('uname')?.dirty) && this.loginForm.get('uname')?.errors" class="text-danger">Invalid userid</p>
+        </div>
+            <div class="col-md-8 mb-3">
+                <input  class="col-md-8 col-12 col-lg-6 col-xl-6 form-control mt-2 mb-2" type="password" formControlName="pswd" name="pswd" placeholder="enter your password">
+            <p *ngIf="(this.loginForm.get('pswd')?.touched || this.loginForm.get('pswd')?.dirty) && this.loginForm.get('pswd')?.errors" class="text-danger">Invalid password</p>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-outline-success mt-2 col-md-8 col-12">Submit</button>
+            </div>
+            <a routerLink="/register">Register</a>
+        </form>      
+       </div>
+    </div>
+</div>

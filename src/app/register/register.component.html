@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row main">
+        <div class="col-md-6 col-lg-6 col-xl-6 col-12">
+            <img class="img-fluid" src="/assets/register-now.gif" alt="failed to load">
+        </div>
+        <div class="col-md-6 col-lg-6 col-xl-6 col-12 mt-5">
+            <form [formGroup]="registerForm" (ngSubmit)=register()>
+                <h3 class="mb-4">Create Your Account</h3>
+                <div class="col-md-8 mb-3">
+                    <input  type="text" class="form-control mt-2 mb-2 col-md-8 col-12 col-lg-6 col-xl-6" formControlName="uname" name="uname" placeholder="enter username">
+                <p *ngIf="(this.registerForm.get('uname')?.touched || this.registerForm.get('uname')?.dirty) && this.registerForm.get('uname')?.errors" class="text-danger">Invalid username</p>
+                </div>
+                
+                <div class="col-md-8 mb-3">
+                    <input  type="password" class="form-control mt-2 mb-2 col-md-8 col-12 col-lg-6 col-xl-6" formControlName="pswd" name="pswd" placeholder="enter your password">
+                <p *ngIf="(this.registerForm.get('pswd')?.touched || this.registerForm.get('pswd')?.dirty) && this.registerForm.get('pswd')?.errors" class="text-danger">Invalid password</p>
+                </div>
+                <div class="mb-2">
+                    <button class="col-md-8 col-12  btn btn-outline-success mt-2">Sign Up</button>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</div>
